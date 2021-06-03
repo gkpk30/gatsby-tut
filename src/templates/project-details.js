@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 
 
  const ProjectDetails = ({ data }) => {
-  const featuredImg=getImage(data.markdownRemark.frontmatter.thumb.childImageSharp.gatsbyImageData)
+  const featuredImg=getImage(data.markdownRemark.frontmatter.featuredImg.childImageSharp.gatsbyImageData)
   const { html } = data.markdownRemark
   const { title, stack} = data.markdownRemark.frontmatter
 
@@ -41,17 +41,12 @@ query ProjectDetails($slug: String) {
       title
       featuredImg {
         childImageSharp {
-          fluid {
-            src
-          }
+          gatsbyImageData(layout: CONSTRAINED, placeholder: DOMINANT_COLOR)
         }
       }
     }
   }
 }
-
-
-  
 `
 
 

@@ -43,7 +43,6 @@ query ProjectsPage {
         slug
         stack
         title
-        featured
         thumb {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH,
